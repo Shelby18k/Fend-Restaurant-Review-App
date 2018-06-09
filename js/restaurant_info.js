@@ -96,6 +96,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  * Create all reviews HTML and add them to the webpage.
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
+  let tabIndex = 2;
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
@@ -109,7 +110,8 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   }
   const ul = document.getElementById('reviews-list');
   reviews.forEach(review => {
-    ul.appendChild(createReviewHTML(review));
+    ul.appendChild(createReviewHTML(review,tabIndex));
+    tabIndex++;
   });
   container.appendChild(ul);
 }
@@ -117,8 +119,9 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 /**
  * Create review HTML and add it to the webpage.
  */
-createReviewHTML = (review) => {
+createReviewHTML = (review,tabIndex) => {
   const li = document.createElement('li');
+  li.setAttribute('tabIndex',tabIndex.toString())
   const name = document.createElement('p');
   name.innerHTML = review.name;
   li.appendChild(name);
