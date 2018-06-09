@@ -191,11 +191,11 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  top: 130px;
+  padding-top: 0;
 }
 .inside #map {
   background-color: #ccc;
@@ -314,17 +314,67 @@ nav h1 a {
   #breadcrumb{
     display: flex;
     flex-direction: row;
-    width: 320px;
+    width: 100%;
     justify-content: flex-start;
   }
 
   .restaurant-content{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     }
 
-    .map-restaurant{
-    width: 100%;
+    #restaurant-container{
+      width: 75%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    #restaurant-name{
+      font-size: 20px;
+    }
+
+    #restaurant-img,#restaurant-cuisine{
+      width: 100%;
+    }
+
+    #reviews-container{
+      width: 75%;
+    }
+  
+  .inside #footer{
+    width: 86%;
+  }
+}
+
+@media screen and (min-width: 420px){
+  .inside #footer{
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 600px){
+  .inside #footer{
+    width: 92%;
+  }
+
+  #reviews-container{
+      width: 85%;
+    }
+
+  #restaurant-container{
+    width: 85%;
+  }
+}
+
+
+@media screen and (min-width: 800px){
+  #reviews-container{
+      width: 90%;
+    }
+  .inside #footer{
+    width: 95%;
   }
 }
